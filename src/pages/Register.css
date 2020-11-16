@@ -1,0 +1,43 @@
+.ilist{
+    justify-content: center;
+    display: flex!important;
+    align-items: center!important;
+}
+
+.example-center{
+    text-align: center;
+}
+div {
+    margin-left: auto;
+    margin-right: auto;
+}
+.test{
+    height:100%
+}
+.titre{
+    padding-top: 10px;
+    text-align: center;
+}
+.nom{
+    text-align: center;
+    padding-bottom: 20%;
+   
+}
+.labelC{
+    color: #36454F;
+    
+}
+.test{
+    padding-top: 15px;
+}
+.inputBorder{
+    border-bottom: 2px solid #3880ff;
+    border-left: 2px solid #3880ff;
+    border-right: 2px solid #3880ff;
+    border-radius: 5px;
+    text-align: center;
+    width: 210px;
+}
+.segment-button.segment-activated{
+    border: 2px dashed black !important;
+  }

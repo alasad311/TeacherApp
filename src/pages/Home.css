@@ -1,0 +1,24 @@
+.ilist{
+    justify-content: center;
+    display: flex!important;
+    align-items: center!important;
+}
+
+.example-center{
+    text-align: center;
+}
+div {
+    margin-left: auto;
+    margin-right: auto;
+}
+.test{
+    height:100%
+}
+.titre{
+    padding-top: 30%;
+    text-align: center;
+}
+.nom{
+    text-align: center;
+    padding-bottom: 50%;
+}
