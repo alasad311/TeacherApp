@@ -40,7 +40,7 @@ const Tab1: React.FunctionComponent = () => {
         <img src="/assets/shapes.svg" alt=""/>
         <IonCardHeader>
           <IonCardSubtitle>Get Started</IonCardSubtitle>
-          <IonCardTitle>Welcome to Teacher App</IonCardTitle>
+          <IonCardTitle>Welcome to Private Teacher App</IonCardTitle>
         </IonCardHeader>
         <IonCardContent>
           <p>

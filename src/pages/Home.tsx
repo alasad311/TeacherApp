@@ -7,7 +7,7 @@ const Home: React.FC = () => {
     <IonContent class="ion-padding">
     <IonImg src="assets\testIO-logo-rgb-2.png" />
       <h4 className='titre'>Welcome to </h4>
-      <h1 className='nom'>Teacher App</h1>
+      <h1 className='nom'>Private Teacher App</h1>
 
     <IonGrid>
         <IonRow justify-content-center align-items-end class="test">

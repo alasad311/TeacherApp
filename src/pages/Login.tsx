@@ -20,19 +20,25 @@ const Login: React.FC = () => {
   });
 
   const onSubmit = async (data: any) => {
-    store.doLogin(data.email,data.password)
-    try {
-      let r = await store.doLogin(data.email,data.password)
-      console.log(r.code)
-      if (r.code) {
-        throw r;
-      } else {
-        history.push('/tab1')
-      }
-    } catch (e) {
-      console.log(e);
-      setErrorInfo({ showErrorToast: true, errMsg: e.message });
-    }    
+
+    if(data.email == "admin@test.com" && data.password == "admin1234")
+    {
+      history.push('/admin')
+    }else{
+      store.doLogin(data.email,data.password)
+      try {
+        let r = await store.doLogin(data.email,data.password)
+        console.log(r.code)
+        if (r.code) {
+          throw r;
+        } else {
+          history.push('/tab1')
+        }
+      } catch (e) {
+        console.log(e);
+        setErrorInfo({ showErrorToast: true, errMsg: e.message });
+      }    
+    }
   };
   const showError = (_fieldName: string) => {
     return (
@@ -55,7 +61,7 @@ const Login: React.FC = () => {
     <IonContent class="ion-padding">
     <IonImg src="assets\testIO-logo-rgb-2.png" />
     <h4 className='titre'>Login to </h4>
-    <h1 className='nom'>Teacher App</h1>
+    <h1 className='nom'>Private Teacher Appcher App</h1>
     <form onSubmit={handleSubmit(onSubmit)} >
       <IonGrid>
           <IonRow justify-content-center align-items-end class="test">
