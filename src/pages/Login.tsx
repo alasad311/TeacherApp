@@ -1,4 +1,4 @@
-import { IonButton, IonCol, IonContent, IonGrid, IonImg, IonInput, IonLabel, IonRow, IonSegment, IonSegmentButton } from '@ionic/react';
+import { IonAlert, IonButton, IonCol, IonContent, IonGrid, IonImg, IonInput, IonLabel, IonRow, IonSegment, IonSegmentButton } from '@ionic/react';
 import React, { useState } from 'react';
 import { useForm, Controller } from "react-hook-form";
 import { MobXProviderContext, observer } from "mobx-react";
@@ -21,10 +21,10 @@ const Login: React.FC = () => {
 
   const onSubmit = async (data: any) => {
 
-    if(data.email == "admin@test.com" && data.password == "admin1234")
-    {
-      history.push('/admin')
-    }else{
+    // if(data.email == "admin@test.com" && data.password == "admin1234")
+    // {
+    //   history.push('/admin')
+    // }else{
       store.doLogin(data.email,data.password)
       try {
         let r = await store.doLogin(data.email,data.password)
@@ -35,60 +35,74 @@ const Login: React.FC = () => {
           history.push('/tab1')
         }
       } catch (e) {
-        console.log(e);
-        setErrorInfo({ showErrorToast: true, errMsg: e.message });
+        
+          const alert = document.createElement('ion-alert');
+          alert.header = 'Alert';
+          alert.subHeader = 'Error';
+          alert.message = 'Email or password is incorrect';
+          alert.buttons = ['OK'];
+      
+          document.body.appendChild(alert);
+          alert.present();
+        
+        
+
+
+        //setErrorInfo({ showErrorToast: true, errMsg: e.message });
       }    
-    }
+    
   };
   const showError = (_fieldName: string) => {
     return (
       (errors as any)[_fieldName] && (
         <div
-          style={{
-            color: "red",
-            padding: 5,
-            paddingLeft: 12,
-            fontSize: "smaller"
-          }}
-        >
-          This field is required
-        </div>
+        style={{
+          color: "red",
+          padding: 5,
+          paddingLeft: 12,
+          fontSize: "smaller",
+          fontWeight: "bold",
+          display: "inline"
+        }}
+      >
+{
+              (errors as any)[_fieldName]['message']
+           }        </div>
       )
     );
   
 };
   return (
+    
     <IonContent class="ion-padding">
-    <IonImg src="assets\testIO-logo-rgb-2.png" />
-    <h4 className='titre'>Login to </h4>
-    <h1 className='nom'>Private Teacher App</h1>
+   
+    <div className="loginHeader">
+      <img className="loginHeaderIMG" src="assets\white-logo.png" />
+      <h4 className='loginTitle'>Login </h4>
+    </div>
     <form onSubmit={handleSubmit(onSubmit)} >
-      <IonGrid>
+      <IonGrid className="loginGrid">
           <IonRow justify-content-center align-items-end class="test">
-                <IonCol col-3>
-                  <IonLabel class="labelC">Username: </IonLabel>
-                </IonCol>
-                <IonCol col-9>
+                <IonCol col-12 class="loginFieldDesign">
+                  <IonLabel class="loginLable">Email {showError("email")}</IonLabel>
                 <Controller
                   render={({ onChange }) => (<IonInput className="inputBorder" onIonChange={onChange}/>)}
                   control={control}
                   name="email"
                   rules={{
-                    required: "This is a required field",
+                    required: true,
                     pattern: {
                       value: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i,
                       message: "invalid email address"
                     }
                   }}
                 />
-                {showError("email")}
+                
                 </IonCol>
           </IonRow>
           <IonRow justify-content-center align-items-end class="test">
-                <IonCol col-3>
-                  <IonLabel class="labelC">Password: </IonLabel>
-                </IonCol>
-                <IonCol col-9>
+          <IonCol col-12 class="loginFieldDesign">
+                  <IonLabel class="loginLable">Password  {showError("password")}</IonLabel>
                   <Controller
                 render={({ onChange }) => (<IonInput className="inputBorder"   type="password"  onIonChange={onChange}/>)}
                 control={control}
@@ -96,12 +110,14 @@ const Login: React.FC = () => {
               
                 rules={{
                   required: true,
-                  minLength: { value: 8, message: "Must be 8 chars long" }
+                  minLength: { value: 1, message: "Field Required" }
                 }}
                 />
-                {showError("password")}
+               
                 </IonCol>
           </IonRow>
+          </IonGrid>
+          <IonGrid>
           <IonRow justify-content-center align-items-end class="test">
               <IonCol col-6>
                   <IonButton expand="full" shape="round" fill="outline" href="/home">Back</IonButton>

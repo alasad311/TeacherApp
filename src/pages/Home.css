@@ -14,11 +14,38 @@ div {
 .test{
     height:100%
 }
-.titre{
-    padding-top: 30%;
+.homeTitle{
     text-align: center;
+    font-size: 15px;
+    font-family: Arial, Helvetica, sans-serif;
+    padding-top: 10%;
 }
 .nom{
     text-align: center;
-    padding-bottom: 50%;
+    padding-bottom: 5%;
+}
+.HomeBtn{
+    width: 150px;
+    margin: 0 auto;
+}
+.HomeWelcome{
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: center;
+    font-size: 40px;
+}
+.homeImage{
+    width: 30%;
+}
+.HomeSen{
+    font-size: 14px;
+    text-align: center;
+}
+.ion-padding {
+    background-color: crimson !important;
+}
+.logoHolder{
+    display: inline-flex;
+}
+.logoName{
+    padding-top:10px;
 }

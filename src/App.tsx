@@ -1,6 +1,6 @@
 import React from 'react';
 import { Redirect, Route } from 'react-router-dom';
-import { IonApp, IonContent, IonHeader, IonIcon, IonLabel, IonLoading, IonMenuButton, IonPage, IonRouterOutlet, IonTabBar, IonTabButton, IonTabs, IonTitle, IonToolbar } from '@ionic/react';
+import { IonApp, IonIcon, IonLabel, IonLoading, IonRouterOutlet, IonTabBar, IonTabButton } from '@ionic/react';
 import { IonReactRouter } from '@ionic/react-router';
 import Home from './pages/Home';
 import login from './pages/Login';
@@ -24,11 +24,12 @@ import '@ionic/react/css/display.css';
 
 /* Theme variables */
 import './theme/variables.css';
-import { flash, apps } from 'ionicons/icons';
+import { apps, book, cog, home, people } from 'ionicons/icons';
 import Tab1 from './pages/Tab1';
 import Details from './pages/Tab1Detail';
 import Tab2 from './pages/Tab2';
 import Tab3 from './pages/Tab3';
+import Tab4 from './pages/Tab4';
 import Admin from './pages/admin';
 const PrivateRoutes = () => {
   return (
@@ -49,25 +50,29 @@ const PublicRoutes = () => {
     <IonApp>
     <IonReactRouter>
         <IonRouterOutlet>
-        <Route path="/tab1"  component={Tab1} exact={true} />
+          <Route path="/tab1"  component={Tab1} exact={true} />
           <Route path="/tab2" component={Tab2} exact={true} />
-          <Route path="/tab2/details" component={Details} />
           <Route path="/tab3" component={Tab3} /> 
+          <Route path="/tab4" component={Tab4} /> 
           <Route exact path="/" render={() => <Redirect to="/tab1" />} />
         </IonRouterOutlet>
         <IonTabBar slot="bottom">
           <IonTabButton tab="tab1" href="/tab1">
-            <IonIcon icon={flash} />
+            <IonIcon icon={home} />
             <IonLabel>Home</IonLabel>
           </IonTabButton>
           <IonTabButton tab="tab2" href="/tab2">
-            <IonIcon icon={apps} />
+            <IonIcon icon={book} />
             <IonLabel>Courses</IonLabel>
           </IonTabButton>
           <IonTabButton tab="tab3" href="/tab3">
-            <IonIcon icon={apps} />
+            <IonIcon icon={people} />
             <IonLabel>Profile</IonLabel>
           </IonTabButton>
+          {/* <IonTabButton tab="tab4" href="/tab4">
+            <IonIcon icon={cog} />
+            <IonLabel>Setting</IonLabel>
+          </IonTabButton> */}
         </IonTabBar>
     </IonReactRouter>
     </IonApp>
@@ -80,7 +85,7 @@ const App = () => {
 
   return !store.authCheckComplete ? (
     <IonApp>
-      <IonLoading isOpen message="Starting App..." />
+      <IonLoading isOpen message="Loading App..." />
     </IonApp>
   ) : (
     <IonApp>{store.authenticatedUser ? <PublicRoutes /> : <PrivateRoutes />}</IonApp>

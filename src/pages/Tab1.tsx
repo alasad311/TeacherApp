@@ -7,19 +7,12 @@ import {
   IonCardSubtitle,
   IonCardTitle,
   IonContent,
-  IonHeader,
-  IonIcon,
   IonItem,
   IonLabel,
-  IonList,
-  IonListHeader,
-  IonTitle,
-  IonToolbar
+  IonList
   } from '@ionic/react';
-import { book, build, colorFill, grid } from 'ionicons/icons';
 import React from 'react';
 import './Tab1.css';
-import { MobXProviderContext, observer } from "mobx-react";
 import { logOut } from '../store/firebaseService';
 import { useHistory } from "react-router";
 
@@ -36,7 +29,7 @@ const Tab1: React.FunctionComponent = () => {
   return (
   <IonApp  class="tabContent">
     <IonContent>
-      <IonCard class="welcome-card">
+    <IonCard class="welcome-card">
         <img src="/assets/shapes.svg" alt=""/>
         <IonCardHeader>
           <IonCardSubtitle>Get Started</IonCardSubtitle>
@@ -44,21 +37,16 @@ const Tab1: React.FunctionComponent = () => {
         </IonCardHeader>
         <IonCardContent>
           <p>
-            Now that your app has been created, you'll want to start building out features and
-            components. Check out some of the resources below for next steps.
+            Now that you have created an account, start by search for courses or request a course.
           </p>
         </IonCardContent>
       </IonCard>
-      <IonList>
-          <IonItem>
-            <IonLabel>
-              <IonButton expand="full" shape="round" fill="outline"
-              onClick={ () => logoutuser() }
-              >Logout</IonButton>
-            </IonLabel>
-          </IonItem>
-        </IonList>
-
+      <IonCard >
+        <IonCardHeader>
+          <IonCardSubtitle>No Courses Enrolled</IonCardSubtitle>
+        </IonCardHeader>
+      
+      </IonCard>
     </IonContent>
   </IonApp>
   );
