@@ -1,1 +1,14 @@
-{}
+{
+  "appId": "io.ionic.starter",
+  "appName": "TeacherApp",
+  "bundledWebRuntime": false,
+  "npmClient": "npm",
+  "windowsAndroidStudioPath": "C:\\Users\\M.AlAsad\\AppData\\Local\\JetBrains\\Toolbox\\apps\\AndroidStudio\\ch-0\\201.6953283\\bin\\studio64.exe",
+  "webDir": "build",
+  "plugins": {
+    "SplashScreen": {
+      "launchShowDuration": 0
+    }
+  },
+  "cordova": {}
+}
