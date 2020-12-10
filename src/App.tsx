@@ -31,6 +31,7 @@ import Tab2 from './pages/Tab2';
 import Tab3 from './pages/Tab3';
 import Tab4 from './pages/Tab4';
 import Admin from './pages/admin';
+import forgot from './pages/forgot'
 const PrivateRoutes = () => {
   return (
     <IonReactRouter>
@@ -40,6 +41,7 @@ const PrivateRoutes = () => {
         <Route path="/login" component={login} exact={true} />
         <Route path="/register" component={Register} exact={true} />
         <Route path="/admin" component={Admin} exact={true} />
+        <Route path="/forgotpassword" component={forgot} exact={true} />
         <Route exact path="/" render={() => <Redirect to="/home" />} />
       </IonRouterOutlet>
     </IonReactRouter>

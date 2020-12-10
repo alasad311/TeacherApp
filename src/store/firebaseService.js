@@ -99,6 +99,12 @@ export const registerUser = (userInfo) => {
     });
 };
 
+export const resetUserPassword = (email) => {
+  return firebase.auth().sendPasswordResetEmail(email);
+};
+export const changeUserPassword = (password) => {
+  return firebase.auth().currentUser.updatePassword(password);
+};
 /**
  *
  */

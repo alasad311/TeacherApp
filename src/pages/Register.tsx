@@ -66,11 +66,17 @@ const Register: React.FC = () => {
       if (r.code) {
         throw r;
       } else {
-        history.goBack()
+        history.push("/tab1")
       }
     } catch (e) {
       console.log(e);
-      setErrorInfo({ showErrorToast: true, errMsg: e.message });
+      const alert = document.createElement('ion-alert');
+      alert.header = '';
+      alert.subHeader = 'Error';
+      alert.message = e.message;
+      alert.buttons = ['OK']
+      document.body.appendChild(alert);
+      alert.present()
     }
   };
 

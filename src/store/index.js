@@ -102,6 +102,17 @@ export class Store {
     }
   }
 
+  doResetPassword(_email) {
+    if (_email.length) {
+      return firebaseService.resetUserPassword(_email)
+    }
+  }
+  doChangePassword(_password) {
+    if (_password.length) {
+      return firebaseService.changeUserPassword(_password)
+    }
+  }
+
   /**
    * create the user with the information and set the user object
    */

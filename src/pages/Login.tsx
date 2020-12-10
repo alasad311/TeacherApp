@@ -117,7 +117,11 @@ const Login: React.FC = () => {
                 </IonCol>
           </IonRow>
           </IonGrid>
+          
           <IonGrid>
+            <IonRow>
+              <IonCol col-12><a href="/forgotpassword">Forgot Password</a></IonCol>
+            </IonRow>
           <IonRow justify-content-center align-items-end class="test">
               <IonCol col-6>
                   <IonButton expand="full" shape="round" fill="outline" href="/home">Back</IonButton>

@@ -86,3 +86,12 @@
 .logoutBtn{
   width: 100%;
 }
+.labelC{
+  color: #9d9d9d;
+  font-size: 12px !important;
+  font-weight: bold;
+}
+.registerFieldDesign{
+  border-bottom: 1px solid #e2e0e0;
+  padding: 5px 0px 0px 5px;
+}
