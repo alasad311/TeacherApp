@@ -6,8 +6,6 @@ import "firebase/analytics";
 import "firebase/auth";
 import "firebase/firestore";
 
-
-
 var firebaseConfig = {
   apiKey: "AIzaSyBhpsCmqUgtFp02OUl6GPcur8cav3UQYgw",
   authDomain: "teacher-project-5612b.firebaseapp.com",
@@ -77,12 +75,13 @@ export const logOut = () => {
  * @param {*} userInfo.password
  */
 export const registerUser = (userInfo) => {
-  console.log("in registerUser");
+  console.log(userInfo.email)
   return firebase
     .auth()
     .createUserWithEmailAndPassword(userInfo.email, userInfo.password)
     .then((newUser) => {
-      let { email, firstName, lastName } = userInfo;
+      let { email, firstName, lastName,role,password } = userInfo;
+      let pass = new Buffer(password).toString('base64');
 
       return firebase
         .firestore()
@@ -92,6 +91,8 @@ export const registerUser = (userInfo) => {
           email,
           firstName,
           lastName,
+          role,
+          pass
         })
         .then(() => {
           return { ...newUser.user, firstName, lastName };
@@ -105,32 +106,30 @@ export const resetUserPassword = (email) => {
 export const changeUserPassword = (password) => {
   return firebase.auth().currentUser.updatePassword(password);
 };
+
+
 /**
  *
  */
 export const getUserProfile = () => {
   let user = firebase.auth().currentUser;
-  console.log(user);
+  //console.log(user);
 
   var userRef = firebase.firestore().collection("users").doc(user.uid);
-
   return userRef
     .get()
     .then((doc) => {
       if (doc.exists) {
-        console.log("Document data:", doc.data());
-        return {
-          ...doc.data(),
-          id: user.uid,
-        };
+        //console.log("Document data:", doc.data());
+        return doc.data();
       } else {
         // doc.data() will be undefined in this case
-        console.log("No such document!", user.uid);
+        //console.log("No such document!", user.uid);
         return null;
       }
     })
     .catch((error) => {
-      console.log("Error getting document:", error);
+      //console.log("Error getting document:", error);
     });
 };
 

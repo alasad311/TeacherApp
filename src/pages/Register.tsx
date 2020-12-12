@@ -19,6 +19,7 @@ const Register: React.FC = () => {
   const [password, setPassword] = useState({});
   const [firstName, setFirstName] = useState({});
   const [lastName, setLastName] = useState({});
+  const [role, setUserRole] = useState({});
   const [, setErrorInfo] = useState({});
   const history = useHistory();
 
@@ -55,18 +56,28 @@ const Register: React.FC = () => {
     setLastName(data.LastName)
     setPassword(data.password)
     setEmail(data.email)
+    setUserRole(data.segSelect)
+
+    let emailData = data.email;
+    let FirstNameData = data.FirstName;
+    let LastNameData = data.LastName;
+    let passwordData = data.password;
+    let roleData = data.segSelect;
     try {
       let r = await store.doCreateUser({
-        email,
-        password,
-        firstName,
-        lastName,
+        emailData,
+        passwordData,
+        FirstNameData,
+        LastNameData,
+        roleData
       });
-      console.log(r.code)
+      
+      
+
       if (r.code) {
         throw r;
       } else {
-        history.push("/tab1")
+        history.push("/home")
       }
     } catch (e) {
       console.log(e);

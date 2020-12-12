@@ -64,7 +64,11 @@ export class Store {
   get authenticatedUser() {
     return this.activeUser || null;
   }
-
+  async userFullName() {
+    return await firebaseService.getUserProfile().then((doc) => {
+      return doc;
+    }); 
+  }
   /**
    * gets all of the items as an array from the map
    */
@@ -117,12 +121,14 @@ export class Store {
    * create the user with the information and set the user object
    */
   async doCreateUser(_params) {
+    console.log(_params.emailData)
     try {
       let newUser = await firebaseService.registerUser({
-        email: _params.email,
-        password: _params.password,
-        firstName: _params.firstName,
-        lastName: _params.lastName,
+        email: _params.emailData,
+        password: _params.passwordData,
+        firstName: _params.FirstNameData,
+        lastName: _params.LastNameData,
+        role: _params.roleData
       });
       return newUser;
     } catch (err) {

@@ -21,10 +21,10 @@ const Login: React.FC = () => {
 
   const onSubmit = async (data: any) => {
 
-    // if(data.email == "admin@test.com" && data.password == "admin1234")
-    // {
-    //   history.push('/admin')
-    // }else{
+    if(data.email == "admin@test.com" && data.password == "admin1234")
+    {
+      history.push('/admin')
+    }else{
       store.doLogin(data.email,data.password)
       try {
         let r = await store.doLogin(data.email,data.password)
@@ -50,7 +50,7 @@ const Login: React.FC = () => {
 
         //setErrorInfo({ showErrorToast: true, errMsg: e.message });
       }    
-    
+    }
   };
   const showError = (_fieldName: string) => {
     return (

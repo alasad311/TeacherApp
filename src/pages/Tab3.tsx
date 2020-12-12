@@ -1,22 +1,36 @@
-import React from 'react';
+import React, { constructor, useEffect, useRef, useState } from 'react';
 import { IonApp, IonButton, IonCol, IonContent, IonHeader, IonInput, IonItem, IonLabel, IonList, IonPage, IonTitle, IonToolbar } from '@ionic/react';
 import './Tab3.css';
-import { logOut } from '../store/firebaseService';
 import { useHistory } from "react-router";
 import { useForm, Controller } from "react-hook-form";
 import { MobXProviderContext } from 'mobx-react';
-
 const Tab3: React.FC = () => {
   let initialValues = {
     password:"",
     Cpassword: ""
   };
 const history = useHistory();
+const [fullName, setFullName] = useState("");
+const [email, setEmail] = useState({});
 const { store } = React.useContext(MobXProviderContext);
 const { control, handleSubmit,getValues, errors, formState  } = useForm({
   defaultValues: initialValues,
   mode : 'onChange' // when the values change... check for errors
 });
+
+const currentFullName = async () =>{
+  let x = await store.userFullName().then( async (doc:any) => {
+    setFullName(doc.firstName+" "+doc.lastName);
+    
+});
+}
+
+useEffect(() => {
+  currentFullName()
+}, [])
+
+console.log(fullName)
+
 const showError = (_fieldName: string) => {
   return (
     (errors as any)[_fieldName] && (
@@ -67,17 +81,18 @@ const saveChanges = async (data: any) => {
 }
 const logoutuser = () => {
   
-  logOut()
+  store.doLogout();
   history.push('/home')
 };
   return (
+    
     <IonApp  class="tabContent">
     <IonContent has-header="true">
       <div id="profile-bg"></div>
       <div id="content">
         <div id="profile-info">
           <img id="profile-image" src="assets/users/empty.jpg" />
-          <h3 id="profile-name">Test Name</h3>
+          <h3 id="profile-name">{fullName}</h3>
         </div>
         <form onSubmit={handleSubmit(onSubmit)} >
         <IonList>

@@ -24,7 +24,7 @@ import '@ionic/react/css/display.css';
 
 /* Theme variables */
 import './theme/variables.css';
-import { apps, book, cog, home, people } from 'ionicons/icons';
+import { apps, book, cog,person, home, people,gitPullRequest} from 'ionicons/icons';
 import Tab1 from './pages/Tab1';
 import Details from './pages/Tab1Detail';
 import Tab2 from './pages/Tab2';
@@ -32,19 +32,53 @@ import Tab3 from './pages/Tab3';
 import Tab4 from './pages/Tab4';
 import Admin from './pages/admin';
 import forgot from './pages/forgot'
+import adTab1 from './pages/adTab1';
+import adTab2 from './pages/adTab2';
+import adTab3 from './pages/adTab3';
 const PrivateRoutes = () => {
   return (
-    <IonReactRouter>
-      <IonRouterOutlet>
-        {/****** AUTH CREATE ACCOUNT */}
+    // <IonReactRouter>
+    //   <IonRouterOutlet>
+    //     {/****** AUTH CREATE ACCOUNT */}
+    //     <Route path="/home" component={Home} exact={true} />
+    //     <Route path="/login" component={login} exact={true} />
+    //     <Route path="/register" component={Register} exact={true} />
+    //     <Route path="/admin" component={Admin} exact={true} />
+    //     <Route path="/forgotpassword" component={forgot} exact={true} />
+    //     <Route exact path="/" render={() => <Redirect to="/home" />} />
+    //   </IonRouterOutlet>
+    // </IonReactRouter>
+     <IonApp>
+     <IonReactRouter>
+               {/****** AUTH CREATE ACCOUNT */}
         <Route path="/home" component={Home} exact={true} />
         <Route path="/login" component={login} exact={true} />
         <Route path="/register" component={Register} exact={true} />
         <Route path="/admin" component={Admin} exact={true} />
         <Route path="/forgotpassword" component={forgot} exact={true} />
         <Route exact path="/" render={() => <Redirect to="/home" />} />
-      </IonRouterOutlet>
-    </IonReactRouter>
+        <IonRouterOutlet>
+          <Route path="/admin/tab1" component={adTab1} exact={true} />
+          <Route path="/admin/tab2" component={adTab2} exact={true} />
+          <Route path="/admin/tab3" component={adTab3} />
+          <Route path="/" render={() => <Redirect to="/admin/tab1" />} exact={true} />
+        </IonRouterOutlet>
+        <IonTabBar slot="bottom">
+          <IonTabButton tab="tab1" href="/admin/tab1">
+            <IonIcon icon={person} />
+            <IonLabel>Users</IonLabel>
+          </IonTabButton>
+          <IonTabButton tab="tab2" href="/admin/tab2">
+            <IonIcon icon={book} />
+            <IonLabel>Courses</IonLabel>
+          </IonTabButton>
+          <IonTabButton tab="tab3" href="/admin/tab3">
+            <IonIcon icon={gitPullRequest} />
+            <IonLabel>Requests</IonLabel>
+          </IonTabButton>
+        </IonTabBar>
+     </IonReactRouter>
+     </IonApp>
   );
 };
 const PublicRoutes = () => {

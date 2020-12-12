@@ -1,31 +1,26 @@
-import { IonButton, IonCol, IonContent, IonGrid, IonImg, IonInput, IonLabel, IonRow } from '@ionic/react';
+import { IonApp, IonButton, IonButtons, IonCard, IonCardContent, IonCardHeader, IonCardSubtitle, IonCardTitle, IonCol, IonContent, IonGrid, IonIcon, IonImg, IonInput, IonLabel, IonRouterOutlet, IonRow, IonSegment, IonSegmentButton, IonTabBar, IonTabButton, IonTabs, IonTitle, IonToolbar } from '@ionic/react';
 import React from 'react';
+import { Redirect, Route, useHistory } from "react-router";
 import './Login.css';
+import { calendar, personCircle, map, informationCircle } from 'ionicons/icons';
+import { IonReactRouter } from '@ionic/react-router';
+
+import {  } from 'ionicons/icons';
+
 const Login: React.FC = () => {
+const history = useHistory();
 
 
   
   return (
-    <IonContent class="ion-padding">
-    <IonImg src="assets\testIO-logo-rgb-2.png" />
-    <h1 className='nom'>Private Teacher App</h1>
-      <IonGrid>
-          <IonRow justify-content-center align-items-end class="test">
-                <IonCol col-3>
-                 <p>1. Control users</p>
-                 <p>2. Approve courses</p>
-                 <p>3. Statistics Report</p>
-                </IonCol>
-          </IonRow>
-          <IonRow justify-content-center align-items-end class="test">
-              <IonCol col-6>
-                  <IonButton expand="full" shape="round" fill="outline" href="/home">Back</IonButton>
-              </IonCol>
-          
-          </IonRow>
-         
-      </IonGrid>
-  </IonContent>
+    <IonContent>
+      <IonCard >
+        <IonCardHeader>
+          <IonCardSubtitle>No Courses Enrolled</IonCardSubtitle>
+        </IonCardHeader>
+      
+      </IonCard>
+    </IonContent>
   );
 };
 

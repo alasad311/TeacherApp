@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { IonApp, IonAvatar, IonButton, IonCard, IonCardContent, IonCardHeader, IonCardTitle, IonCol, IonContent, IonFab, IonFabButton, IonFooter, IonIcon, IonInput, IonItem, IonItemDivider, IonLabel, IonModal, IonRow, IonTextarea } from '@ionic/react';
+import { IonApp, IonAvatar, IonButton, IonCard, IonCardContent, IonCardHeader, IonCardTitle, IonCol, IonContent, IonFab, IonFabButton, IonFooter, IonIcon, IonInput, IonItem, IonItemDivider, IonLabel, IonModal, IonRow, IonSearchbar, IonTextarea } from '@ionic/react';
 import './Tab2.css';
 import { add } from 'ionicons/icons';
 
@@ -16,6 +16,7 @@ const Tab2: React.FC = () => {
           <IonIcon icon={add} />
         </IonFabButton>
       </IonFab>
+      <IonSearchbar value="aaa" ></IonSearchbar>
       <IonCard>
         <IonItem>
           <IonAvatar slot="start">
