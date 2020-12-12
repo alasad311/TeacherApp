@@ -7,14 +7,15 @@ import "firebase/auth";
 import "firebase/firestore";
 
 var firebaseConfig = {
-  apiKey: "AIzaSyBhpsCmqUgtFp02OUl6GPcur8cav3UQYgw",
-  authDomain: "teacher-project-5612b.firebaseapp.com",
-  databaseURL: "https://teacher-project-5612b.firebaseio.com",
-  projectId: "teacher-project-5612b",
-  storageBucket: "teacher-project-5612b.appspot.com",
-  messagingSenderId: "817413747680",
-  appId: "1:817413747680:web:09913ad6db3f1f69713185",
-  measurementId: "G-BY7FX7RLX1"
+  apiKey: "AIzaSyB2JWSRZv3x4BIeYE36rTKknmv0Nitsjlw",
+  authDomain: "private-teacher-app.firebaseapp.com",
+  databaseURL: "https://private-teacher-app.firebaseio.com",
+  projectId: "private-teacher-app",
+  storageBucket: "private-teacher-app.appspot.com",
+  messagingSenderId: "284588790763",
+  appId: "1:284588790763:web:d2617deadf16c2724e7fae",
+  measurementId: "G-20RH97KBB7"
+
 };
 // Ensure that you do not login twice.
 if (!firebase.apps.length) {
