@@ -19,11 +19,12 @@ const adTab2: React.FunctionComponent = () => {
   
   return (
     <IonApp  class="tabContent">
+    
        <IonSearchbar value="" ></IonSearchbar>
     <IonContent>
       <IonCard >
         <IonCardHeader>
-          <IonCardSubtitle>List of All Users</IonCardSubtitle>
+          <IonCardSubtitle>List of All Courses</IonCardSubtitle>
         </IonCardHeader>
       
       </IonCard>

@@ -12,7 +12,6 @@ import {
   } from '@ionic/react';
 import React from 'react';
 import './adTab1.css';
-import { useHistory } from "react-router";
 
 
 const adTab1: React.FunctionComponent = () => {
@@ -20,6 +19,7 @@ const adTab1: React.FunctionComponent = () => {
   
   return (
     <IonApp  class="tabContent">
+    
        <IonSearchbar value="" ></IonSearchbar>
     <IonContent>
       <IonCard >

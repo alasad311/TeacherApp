@@ -23,7 +23,7 @@ const adTab3: React.FunctionComponent = () => {
     <IonContent>
       <IonCard >
         <IonCardHeader>
-          <IonCardSubtitle>List of All Users</IonCardSubtitle>
+          <IonCardSubtitle>List of All Requests</IonCardSubtitle>
         </IonCardHeader>
       
       </IonCard>
