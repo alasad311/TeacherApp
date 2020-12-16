@@ -113,7 +113,7 @@ const ControlButtonsEnroll = () => {
             <h5>Quiz</h5>
           </IonItem>
           <IonItem>
-            <img className="iconImage" src="assets/quiz.svg" /><a href="#" >Quiz 1</a><br />
+            <img className="iconImage" src="assets/quiz.png" /><a href="#" >Quiz 1</a><br />
           </IonItem>
         </IonCard>
         <IonCard>
@@ -129,19 +129,19 @@ const ControlButtonsEnroll = () => {
             <h5>Material Download</h5>
           </IonItem>
           <IonItem>
-            <img className="iconImage" src="assets/document.svg" /><a href="#" target="_blank">PDF 1</a><br />
+            <img className="iconImage" src="assets/document.jpg" /><a href="#" target="_blank">PDF 1</a><br />
           </IonItem>
           <IonItem>
-            <img className="iconImage" src="assets/document.svg" /><a href="">Video 1</a><br />
+            <img className="iconImage" src="assets/document.jpg" /><a href="">Video 1</a><br />
           </IonItem>
           <IonItem>
-            <img className="iconImage" src="assets/document.svg" /><a href="">PPT 1</a><br />
+            <img className="iconImage" src="assets/document.jpg" /><a href="">PPT 1</a><br />
           </IonItem>
           <IonItem>
-            <img className="iconImage" src="assets/document.svg" /><a href="">WORD 1</a><br />
+            <img className="iconImage" src="assets/document.jpg" /><a href="">WORD 1</a><br />
           </IonItem>
           <IonItem>
-            <img className="iconImage" src="assets/document.svg" /><a href="">Link 1</a><br />
+            <img className="iconImage" src="assets/document.jpg" /><a href="">Link 1</a><br />
           </IonItem>
         </IonCard>
 
