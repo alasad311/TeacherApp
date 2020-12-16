@@ -78,7 +78,7 @@ useEffect(() => {
   return (
     <IonApp  class="tabContent requestTab">
       <IonContent className="requestContent">
-        <h3 className="requestHeader">Request a Course</h3>
+        <h3 className="requestHeader">Add a Course</h3>
         <p>Make sure to enter as much information as possible</p>
           <IonGrid className="gridShadow">
               <IonRow justify-content-center align-items-end >
@@ -89,7 +89,7 @@ useEffect(() => {
               </IonRow>
               <IonRow justify-content-center align-items-end >
                     <IonCol col-3 class="registerFieldDesign">
-                      <IonLabel class="labelC">Course Name:</IonLabel>
+                      <IonLabel class="labelC">Course Description:</IonLabel>
                       <IonTextarea  className="inputBorder"/>
                     </IonCol>
               </IonRow>

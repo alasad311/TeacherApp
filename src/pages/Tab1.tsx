@@ -65,7 +65,7 @@ const ControlButtons = () => {
   }
   else
   {
-    return <IonButton  expand="full" shape="round" fill="outline" onClick={() => history.push("/teacher/course",0)}>View Program</IonButton>
+    return <IonButton  expand="full" shape="round" fill="outline" onClick={() => history.push("/teacher/courses",0)}>View Program</IonButton>
 
   }
 }
