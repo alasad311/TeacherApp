@@ -80,7 +80,7 @@ const ControlButtons = () => {
             <IonProgressBar color="primary" value={1}></IonProgressBar><br />
           </IonItem>
           <IonItem>
-            <a href="assets/course/sample.jpg" target="_blank">Certificate</a>
+            <a href="certificate">Certificate</a>
           </IonItem>
           <IonItem>
             <IonCol>

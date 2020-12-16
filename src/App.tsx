@@ -41,7 +41,7 @@ import courseUpdate from './pages/courseupdate'
 import courseStudents from './pages/enrolledstudents'
 import courserequests from './pages/courserequests'
 import newcourse from './pages/newcourse'
-
+import certificate from './pages/certificate'
 
 const PrivateRoutes = () => {
   return (
@@ -88,8 +88,9 @@ const PublicRoutes = () => {
           <Route path="/teacher/chat" component={Tab4} /> 
           <Route path="/course/update" component={courseUpdate} /> 
           <Route path="/course/students" component={courseStudents} /> 
-          <Route path="/requests/courses" component={courserequests} /> 
+          <Route path="/requests/course" component={courserequests} /> 
           <Route path="/newcourse" component={newcourse} /> 
+          <Route path="/certificate" component={certificate} /> 
           <Route exact path="/" render={() => <Redirect to="/tab1" />} />
         </IonRouterOutlet>
         <IonTabBar slot="bottom">

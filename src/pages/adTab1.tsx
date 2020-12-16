@@ -48,7 +48,7 @@ const adTab1: React.FunctionComponent = () => {
         </IonCardHeader>
         <IonCardContent>
           <IonButton expand="full" shape="round" fill="outline"   onClick={ () => formSubmitted() } >Block User</IonButton>
-          <IonButton expand="full" shape="round" fill="outline" href="assets/course/sample.jpg">Certificate</IonButton>
+          <IonButton expand="full" shape="round" fill="outline" href="certificate">Certificate</IonButton>
         </IonCardContent>
       </IonCard>
       <IonCard class="welcome-card">
@@ -61,7 +61,7 @@ const adTab1: React.FunctionComponent = () => {
         </IonCardHeader>
         <IonCardContent>
           <IonButton expand="full" shape="round" fill="outline" onClick={ () => formSubmitted() } >Block User</IonButton>
-          <IonButton expand="full" shape="round" fill="outline" href="assets/course/sample.jpg">Certificate</IonButton>
+          <IonButton expand="full" shape="round" fill="outline" href="certificate">Certificate</IonButton>
         </IonCardContent>
       </IonCard>
       <IonGrid>

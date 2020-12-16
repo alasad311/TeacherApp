@@ -48,7 +48,7 @@ useEffect(() => {
           <IonCardTitle> <IonProgressBar color="primary" value={0.25}></IonProgressBar><br /></IonCardTitle>
         </IonCardHeader>
         <IonCardContent>
-          <IonButton expand="full" shape="round" fill="outline" href="assets/course/sample.jpg">Certificate</IonButton>
+          <IonButton expand="full" shape="round" fill="outline" href="certificate">Certificate</IonButton>
         </IonCardContent>
       </IonCard>
       <IonCard class="welcome-card">
@@ -58,7 +58,7 @@ useEffect(() => {
           <IonCardTitle> <IonProgressBar color="primary" value={0.25}></IonProgressBar><br /></IonCardTitle>
         </IonCardHeader>
         <IonCardContent>
-          <IonButton expand="full" shape="round" fill="outline" href="assets/course/sample.jpg">Certificate</IonButton>
+          <IonButton expand="full" shape="round" fill="outline" href="certificate">Certificate</IonButton>
         </IonCardContent>
       </IonCard>
       <IonCard class="welcome-card">
@@ -68,7 +68,7 @@ useEffect(() => {
           <IonCardTitle> <IonProgressBar color="primary" value={0.25}></IonProgressBar><br /></IonCardTitle>
         </IonCardHeader>
         <IonCardContent>
-          <IonButton expand="full" shape="round" fill="outline" href="assets/course/sample.jpg">Certificate</IonButton>
+          <IonButton expand="full" shape="round" fill="outline" href="certificate">Certificate</IonButton>
         </IonCardContent>
       </IonCard>
       </IonContent>
