@@ -121,7 +121,7 @@ const ControlButtons = () => {
             <h5>Quiz</h5>
           </IonItem>
           <IonItem>
-            <img className="iconImage" src="assets/quiz.png" /><a href="#" >Quiz 1</a><br />
+            <img className="iconImage" src="assets/quiz.svg" /><a href="#" >Quiz 1</a><br />
           </IonItem>
         </IonCard>
         <IonCard>
