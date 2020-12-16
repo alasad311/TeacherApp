@@ -24,7 +24,7 @@ import '@ionic/react/css/display.css';
 
 /* Theme variables */
 import './theme/variables.css';
-import { apps, book, cog,person, home, people,gitPullRequest} from 'ionicons/icons';
+import { apps, book, cog,person, home, people,gitPullRequest, chatbubble} from 'ionicons/icons';
 import Tab1 from './pages/Tab1';
 import Details from './pages/Tab1Detail';
 import Tab2 from './pages/Tab2';
@@ -32,6 +32,16 @@ import Tab3 from './pages/Tab3';
 import Tab4 from './pages/Tab4';
 import Admin from './pages/admin';
 import forgot from './pages/forgot'
+import request from './pages/request'
+import courseDetails from './pages/course_details'
+import payment from './pages/payment'
+import coursestd from './pages/coursestd'
+import courseteacher from './pages/courseteacher'
+import courseUpdate from './pages/courseupdate'
+import courseStudents from './pages/enrolledstudents'
+import courserequests from './pages/courserequests'
+import newcourse from './pages/newcourse'
+
 
 const PrivateRoutes = () => {
   return (
@@ -69,6 +79,17 @@ const PublicRoutes = () => {
           <Route path="/tab2" component={Tab2} exact={true} />
           <Route path="/tab3" component={Tab3} /> 
           <Route path="/tab4" component={Tab4} /> 
+          <Route path="/request" component={request} /> 
+          <Route path="/course_details" component={courseDetails} /> 
+          <Route path="/payment" component={payment} /> 
+          <Route path="/student/course" component={coursestd} /> 
+          <Route path="/student/chat" component={Tab4} /> 
+          <Route path="/teacher/course" component={courseteacher} /> 
+          <Route path="/teacher/chat" component={Tab4} /> 
+          <Route path="/course/update" component={courseUpdate} /> 
+          <Route path="/course/students" component={courseStudents} /> 
+          <Route path="/requests/courses" component={courserequests} /> 
+          <Route path="/newcourse" component={newcourse} /> 
           <Route exact path="/" render={() => <Redirect to="/tab1" />} />
         </IonRouterOutlet>
         <IonTabBar slot="bottom">
@@ -80,14 +101,12 @@ const PublicRoutes = () => {
             <IonIcon icon={book} />
             <IonLabel>Courses</IonLabel>
           </IonTabButton>
+         
           <IonTabButton tab="tab3" href="/tab3">
             <IonIcon icon={people} />
             <IonLabel>Profile</IonLabel>
           </IonTabButton>
-          {/* <IonTabButton tab="tab4" href="/tab4">
-            <IonIcon icon={cog} />
-            <IonLabel>Setting</IonLabel>
-          </IonTabButton> */}
+          
         </IonTabBar>
     </IonReactRouter>
     </IonApp>
@@ -108,5 +127,6 @@ const App = () => {
 };
 
 export default observer(App);
+
 
 

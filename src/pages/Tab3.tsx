@@ -19,7 +19,7 @@ const { control, handleSubmit,getValues, errors, formState  } = useForm({
 });
 
 const currentFullName = async () =>{
-  let x = await store.userFullName().then( async (doc:any) => {
+  let x = await store.userProfileDetails().then( async (doc:any) => {
     setFullName(doc.firstName+" "+doc.lastName);
     
 });

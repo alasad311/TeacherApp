@@ -77,7 +77,7 @@ const Register: React.FC = () => {
       if (r.code) {
         throw r;
       } else {
-        history.push("/home")
+        history.push("/tab1")
       }
     } catch (e) {
       console.log(e);

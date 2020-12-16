@@ -64,7 +64,7 @@ export class Store {
   get authenticatedUser() {
     return this.activeUser || null;
   }
-  async userFullName() {
+  async userProfileDetails() {
     return await firebaseService.getUserProfile().then((doc) => {
       return doc;
     }); 
