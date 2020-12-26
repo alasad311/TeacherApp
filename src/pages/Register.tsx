@@ -119,6 +119,10 @@ const Register: React.FC = () => {
                 rules={{
                   minLength: { value: 3, message: "Must be 3 chars long" },
                   required: true,
+                  pattern: {
+                    value: /^[a-zA-Z\s]*$/,
+                    message: "Only Text Allowed"
+                  }
                   
                 }}
               />
@@ -138,7 +142,10 @@ const Register: React.FC = () => {
                 rules={{
                   required: true,
                   minLength: { value: 3, message: "Must be 4 chars long" },
-                 
+                  pattern: {
+                    value: /^[a-zA-Z\s]*$/,
+                    message: "Only Text Allowed"
+                  }
                 }}
               />
              
